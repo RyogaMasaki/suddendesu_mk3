@@ -1,0 +1,40 @@
+{% extends '_master.twig' %}
+
+{% block main %}
+{% set listing = true %}
+
+{% if taxonomytype is defined %}
+            <h1>
+                {{ __('general.phrase.overview-for') }}
+                {% if taxonomy.options[slug] is defined %}
+                    {{ taxonomy.options[slug] }}
+                {% else %}
+                    {{ slug }}
+                {% endif %}
+            </h1>
+            {# Taxonomies are fetched unordered by design except if 'has_sortorder'
+               is set to true. This way we keep 'grouping' intact in the listing. #}
+            {% if not taxonomy.has_sortorder %}
+                {# If we specified an order in config.yml, sort them here, accordingly: #}
+                {% set records = records|order(app.config.get('general/listing_sort')) %}
+            {% endif %}
+        {% endif %}
+
+{% for record in records %}
+  {% include '_rpanel_head.twig' %}
+  {% include '_record_preview.twig' %}
+  {% include '_rpanel_foot.twig' %}
+
+        {% else %}
+        <article>
+
+                        <h2>{{ __('general.phrase.no-content-found') }}</h2>
+
+                        <p>
+                            {{ __("Unfortunately, no content could be found. Try another page, or go to the <a href=\"%paths_root%\">homepage</a>.", {'%paths_root%': path('homepage')} ) }}
+                        </p>
+
+                    </article>
+
+        {% endfor %}
+{% endblock main %}

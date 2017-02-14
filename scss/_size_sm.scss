@@ -1,0 +1,13 @@
+@media (max-width:$width-sm) {
+  html {
+    font-size: $font-size-sm;
+  }
+
+  .readmore {
+    display: none !important;
+  }
+
+  .fleft {
+    float: none;
+  }
+}

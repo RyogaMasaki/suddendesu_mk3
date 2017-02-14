@@ -1,0 +1,21 @@
+{
+  "name": "suddendesu_bolt_theme",
+  "description": "Bolt 3 theme for sudden-desu.net",
+  "main": "index.js",
+  "authors": [
+    "Ryou"
+  ],
+  "license": "ISC",
+  "homepage": "http://sudden-desu.net",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "prettydasm_68k": "ryogamasaki/prettydasm"
+  }
+}

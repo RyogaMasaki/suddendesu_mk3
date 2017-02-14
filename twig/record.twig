@@ -1,0 +1,18 @@
+{% extends '_master.twig' %}
+
+{% block main %}
+
+{% include '_rpanel_head.twig' %}
+{% if record.teaser is defined and record.teaser is not empty %}
+  {% include '_record_preview.twig' %}
+{% endif %}
+{% if record.body is defined and record.body is not empty %}
+  {{ record.body }}
+{% endif %}
+{% if record.show_ad != 0 %}
+  <hr class='sep'>
+  {% include '_advert.twig' %}
+{% endif %}
+{% include '_rpanel_foot.twig' %}
+
+{% endblock main %}

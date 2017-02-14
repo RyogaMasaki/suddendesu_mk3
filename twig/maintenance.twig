@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>
+		{{ app.config.get('general/sitename') }} - MAINTENANCE MODE
+		</title>
+		<link href='https://fonts.googleapis.com/css?family=Droid+Serif|Roboto|Roboto+Mono' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="{{ asset('css/suddendesu.css','theme') }}">
+	</head>
+
+	<body>
+		<div id="maincol">
+
+      <article class='pnl'>
+      	<div>
+      		<header class='pnl-callout pnl-head'>
+      			<h1>Maintenance Mode</h1>
+      		</header>
+      		<div class='pnl-body'>
+      <div><img src="{{ asset('img/puyos.png', 'theme') }}" width="372" class="plain"></div>
+      <div>We're upgrading the site right now and we'll be back once we have all our Puyos in order!</div>
+
+    </div>
+    </div>
+  </article>
+
+
+		</div>
+	</body>
+	<script src="{{ asset('js/suddendesu.js', 'theme') }}"></script>
+	</html>

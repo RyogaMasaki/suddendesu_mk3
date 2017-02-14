@@ -1,0 +1,30 @@
+<ul>
+{% for item in menu %}
+    <li>
+        <a href="{{ item.link }}" title="{{ item.title }}">{{item.label}}</a>
+        {% if item.submenu is defined %}
+            <ul>
+            {% for item in item.submenu %}
+                <li class="{{ item.class }}">
+                    <a href="{{ item.link }}" title="{{ item.title }}">{{item.label}}</a>
+                </li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    </li>
+{% endfor %}
+  <li>
+    <form method="get" action="{{ path('search') }}" enctype="text/plain">
+      <input type="search" value="{% if search is defined %}{{ search|escape }}{% endif %}" placeholder="{{ __('general.phrase.search-ellipsis') }}" name="search">
+    </form>
+  </li>
+  <li class="social">
+    <a href='{{ theme.social.twitter }}' title='Twitter' target='_blank'><img src="{{ asset('img/social_twitter.png', 'theme') }}"></a>
+  </li>
+  <li class="social">
+    <a href='{{ theme.social.reddit }}' title='Reddit' target='_blank'><img src="{{ asset('img/social_reddit.png', 'theme') }}"></a>
+  </li>
+  <li class="social">
+    <a href='{{ theme.social.tumblr }}' title='Tumblr' target='_blank'><img src="{{ asset('img/social_tumblr.png', 'theme') }}"></a>
+  </li>
+</ul>

@@ -1,0 +1,11 @@
+	</div>
+		<footer class='pnl-callout pnl-foot'>
+			<ul>
+				<li>{{ record.datepublish|date('Y.m.d H:m') }} by <a href='mailto:{{ record.user.email }}'>{{ record.user.displayname }}</a></li>
+				{% if listing %}
+				<li class='readmore'><a href='{{ record.link }}'><div></div><h3>Read more...</h3></a></li>
+				{% endif %}
+			</ul>
+		</footer>
+	</div>
+</article>

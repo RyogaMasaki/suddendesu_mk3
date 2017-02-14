@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		{% if record.title is defined %}
+			{% set title = record.title|striptags ~ ' | ' %}
+		{% endif %}
+		{% set title = title ~ app.config.get('general/sitename') %}
+		{% if record.title is not defined and app.config.get('general/payoff') %}
+			{% set title = title ~ ' | ' ~ app.config.get('general/payoff') %}
+		{% endif %}
+		<title>
+		{{ title }}
+		</title>
+		<meta property="og:title" content="{{ title }}" />
+		<meta property="og:description" content="{% if record.title is not defined and app.config.get('general/payoff') %}{{ app.config.get('general/payoff') }}{% elseif record.teaser is defined and record.teaser is not empty %}{{ record.teaser|striptags }}{% else %}{{ record.excerpt(220) }}{% endif %}" />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="{{ paths.currenturl }}" />
+		<meta property="og:image" content="{% if record.image=='' %}http://sudden-desu.net/img/sd_image.jpg{% else %}{{ paths.rooturl }}{{ thumbnail(record.image, 400, 260) }}{% endif %}" />
+		<link href='https://fonts.googleapis.com/css?family=Droid+Serif|Roboto|Roboto+Mono' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="{{ asset('css/suddendesu.css','theme') }}">
+	</head>
+
+	<body>
+		<div id="maincol">
+			{% include '_topbar.twig' %}
+
+			{% block main %}
+			{% endblock main %}
+
+			<footer id='mainfoot'>
+				<h3>&copy; 2014-2016 sudden-desu.net</h3>
+			</footer>
+		</div>
+	</body>
+	<script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script src="{{ asset('js/advert.js', 'theme') }}"></script>
+	<script src="{{ asset('js/suddendesu.min.js', 'theme') }}"></script>
+</html>

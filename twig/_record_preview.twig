@@ -1,0 +1,17 @@
+	{% if record.image!='' %}
+	<div class='fleft'>
+		<img src='{{ thumbnail(record.image, 400, 400) }}' {% if record.no_border != 0 %}class='plain'{% else %}class='pnl-shadow'{% endif %}>
+	</div>
+	{% endif %}
+	{% if record.video!='' %}
+		<div class='cnt'>
+		{{ record.video.responsive }}
+		</div>
+		{% endif %}
+		<div class='clearfix'>
+	{% if record.teaser is defined and record.teaser is not empty %}
+	{{ record.teaser }}
+	{% elseif listing %}
+		{{ record.excerpt(220) }}
+	{% endif %}
+</div>

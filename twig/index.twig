@@ -1,0 +1,18 @@
+{% extends '_master.twig' %}
+
+{% block main %}
+{% setcontent records = 'entries/latest/6' allowpaging %}
+
+{% set listing = true %}
+{% for record in records %}
+	{% include '_rpanel_head.twig' %}
+	{% include '_record_preview.twig' %}
+	{% include '_rpanel_foot.twig' %}
+{% endfor %}
+
+<div class='pnl-callout pad center'>
+{% include '_advert.twig' %}
+</div>
+
+{{ pager() }}
+{% endblock main %}

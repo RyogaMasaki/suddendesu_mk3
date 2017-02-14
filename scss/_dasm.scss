@@ -1,0 +1,61 @@
+// for the formatted disassembly blocks
+#dasm_def, #dasm_com {
+  border: 1px solid $white;
+  background-color: $black;
+
+  padding: 0.3em;
+  padding-top: 0;
+  padding-bottom: 0;
+  color: #859900;
+  @include transition(all 0.15s ease-in-out);
+}
+
+.dasm {
+  font-size: 1rem;
+	//border: 1px solid $black;
+	//background: $dark-gray url(#{$path-img}rgb2.png);
+  background: $color-darken2;
+	font-family: $font-monospace;
+	overflow: auto;
+	padding: 0.25em;
+	margin-bottom: 0.75em;
+  margin-right: auto;
+  margin-left: auto;
+  width: auto;
+  overflow: auto;
+  //display:inline-block;
+  @include border-radius($radius-small);
+
+  .dasm_68k_plain {
+    color: #eee8d5;
+  }
+
+  &> tr {
+		td {
+			padding:0.5rem;
+			padding-top:0;
+			padding-bottom:0;
+      width:auto;
+		}
+		td:first-child {
+			// address field
+			color: #eee8d5;
+		}
+
+		td:nth-child(2) {
+			// raw opcode
+			color: #b58900;
+		}
+
+		td:nth-child(3) {
+			// opcode
+      color: #2aa198;
+		}
+
+		td:nth-child(4) {
+			// arguments
+
+      color: #268bd2;
+		}
+	}
+}

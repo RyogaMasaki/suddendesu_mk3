@@ -1,0 +1,23 @@
+{% extends "_master.twig" %}
+
+{% block main %}
+{% set listing = true %}
+
+<h1 class='pnl-callout'>
+  {% if search is not empty %}
+    {{ __('general.phrase.search-results-for-variable', { '%search%': search }) }}
+  {% else %}
+    {{ __('general.phrase.search') }}
+  {% endif %}
+</h1>
+{% for record in records %}
+	{% include '_rpanel_head.twig' %}
+  {% include '_record_preview.twig' %}
+  {% include '_rpanel_foot.twig' %}
+
+  {% else %}
+  <h1 class='pnl-callout'>
+    {{ __('general.phrase.no-result-for-search-term', { '%SEARCHTERM%': search|escape }) }}
+  </h1>
+{% endfor %}
+{% endblock main %}

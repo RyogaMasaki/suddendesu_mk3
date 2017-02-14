@@ -1,0 +1,123 @@
+@include keyframes(cursor_old) {
+0%  { opacity:0; }
+49% { opacity:0; }
+50% { opacity:1; }
+99% { opacity:1; }
+}
+
+@include keyframes(cursor) {
+0%  { opacity:0.3; }
+10% { opacity:0; }
+49% { opacity:0; }
+50% { opacity:1; }
+99% { opacity:1; }
+}
+
+
+@include keyframes(fizzle) {
+0%  { opacity:0.95;}
+20% { opacity:1; }
+25% { opacity:0.91; }
+80% { opacity:1; }
+100%{ opacity:0.93; }
+}
+@include keyframes(fizzle2) {
+0%  { opacity:0.95;}
+20% { opacity:1; }
+25% { opacity:0.89; }
+80% { opacity:1; }
+90%{ opacity:0.93; }
+100%{ opacity:1; }
+}
+
+
+@include keyframes(fizzle3) {
+0%  { opacity:0.90;}
+10% { opacity:1; }
+40% { opacity:0.95; }
+50% { opacity: 1; }
+90%{ opacity:0.92; }
+100%{ opacity:1; }
+}
+
+.crt {
+  font-family:  $font-pixel;
+  //color: #d3dfdf;
+  @include anim(fizzle3 100ms infinite);
+  @include filter(blur(1px));
+  letter-spacing: 0.3em;
+
+}
+#topbar {
+  background: #22222f url(#{$path-img}rgb2.png) ;
+  //width: 98%;
+  //padding: 0.75em;
+  box-shadow: inset 0 8px 50px #000;
+
+  &> div {
+    padding: 0.25em;
+    padding-left: 1.25em;
+    padding-right: 1.25em;
+  }
+
+  .logo {
+    font-size: 3em;
+    //text-shadow: 1px 1px 8px rgba(99, 183, 35, 0.28);
+    //color: rgba(84, 255, 32, 0.31);
+
+    text-shadow: 0 0 8px rgba(200, 200, 240, 0.3);
+    color: rgba(255, 255, 255, 0.6);
+
+    &:before {
+      content:">";
+    }
+
+    &:after {
+      // the block character in the pixel-m+ font is too fat
+      // use the standard monospace font for now
+      font-family: $font-monospace;
+      content:"█";
+      @include anim(cursor 1.5s infinite);
+      color: rgba(255, 255, 255, 0.30);
+      text-shadow: 0 0 8px rgba(200, 200, 240, 0.10);
+    }
+  }
+
+  &> nav{
+    background-color: $color-darken2;
+    padding: 0.25em;
+
+    ul {
+      vertical-align: top;
+    }
+
+    li {
+      font: 1.15em $font-monospace;
+      color: $color-secondary;
+      vertical-align: top;
+      display: inline-block;
+
+      padding-left: 0.5em;
+      a {
+        text-decoration: none;
+        color:inherit;
+
+        &:hover {
+          color:lighten($color-secondary, 10%);
+        }
+      }
+      input[type="search"] {
+        font:inherit;
+        border:none;
+        color:$color-text;
+        background-color: $color-darken;
+      }
+    }
+
+    li.social {
+      img {
+        height: 1.25em;
+      }
+    }
+  }
+}

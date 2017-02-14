@@ -1,0 +1,116 @@
+// Global definitions
+// some parts based on Foundation's system
+// (with a lot less garbage that comes with a full sized framework..)
+
+// paths
+$path-img: "../img/";
+$path-font: "../fonts/";
+
+@font-face {
+  font-family: pxlmp;
+  src:url($path-font + "pxlmp.woff");
+}
+
+// media widths
+$width-md: 1080px;
+$width-sm: 640px;
+
+// - - - - - - - - - - - - - color scheme
+// neutral colors
+$white: #ddd !default;
+$gray: #888 !default;
+$dark-gray: #333 !default;
+$light-gray: #aaa !default;
+$black: #111 !default;
+
+$color-primary: #000 !default;
+$color-secondary: #668399 !default;
+$color-tertiary: #E8A134 !default;
+
+$color-background: $black !default;
+$color-text: #ccc !default;
+
+$color-darken: rgba(30,30,30,0.6) !default;
+$color-darken2: rgba(12%,12%,14%,0.4);
+$color-callout: #735220;
+
+//$color-lcd-green: #66734B;
+$color-lcd-green: rgb(83, 97, 55);
+$color-crt-black: rgb(34,34,40);
+
+//$color-link: #C3BC68 !default;
+$color-link: #8FA75F;
+
+$color-alert: #ffe86c;
+
+// typography
+$font-monospace: 'Roboto Mono','Consolas',monospace;
+$font-sans: 'Roboto',sans-serif;
+$font-serif: 'Droid Serif', serif;
+$font-pixel: 'pxlmp',$font-monospace;
+$font-antialiased: true;
+
+$font-size-base: 16px;
+$font-size-md: 12px;
+$font-size-sm: 10px;
+$font-family-base: $font-sans;
+
+$lineheight-global: 1.5;
+
+// shadows
+$maincol-shadow: inset 0 -60px 80px #000;
+$text-shadow: 1px 1px 0px $color-tertiary;
+$header-shadow: 1px 1px 3px $color-primary;
+
+$panel-shadow: 3px 3px 8px $color-primary;
+
+$radius-global: 0.5rem;
+$radius-small: 0.25rem;
+
+// mixins for cross-browser support
+// (vendor prefixes are the stupidest shit)
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-ms-border-radius: $radius;
+	-o-border-radius: $radius;
+	border-radius: $radius;
+}
+
+@mixin anim($anim) {
+	-webkit-animation: $anim;
+	-moz-animation: $anim;
+	-o-animation: $anim;
+	animation: $anim;
+}
+
+@mixin filter($filter) {
+	-webkit-filter: $filter;
+	-moz-filter: $filter;
+	-ms-filter: $filter;
+	-o-filter: $filter;
+	filter: $filter;
+}
+
+@mixin transition($trans) {
+	-moz-transition: $trans;
+	-webkit-transition: $trans;
+	-moz-transition: $trans;
+	-o-transition: $trans;
+	transition: $trans;
+}
+
+@mixin keyframes($anim-name) {
+    @-webkit-keyframes #{$anim-name} {
+        @content;
+    }
+    @-moz-keyframes #{$anim-name} {
+        @content;
+    }
+    @-o-keyframes #{$anim-name} {
+        @content;
+    }
+    @keyframes #{$anim-name} {
+        @content;
+    }
+}
