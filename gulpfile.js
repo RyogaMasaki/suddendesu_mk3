@@ -11,11 +11,20 @@ gulp.task('process_sass', function() {
 		.pipe(gulp.dest('dist/css'));
 });
 
+function jsPreProcess() {
+  return gulp.src(['js/**/*.js', '!js/advert.js'])
+    .pipe(concat('suddendesu.min.js'))
+    .pipe(uglify())
+    .pipe(gulp.dest('dist/js'));
+
+}
+
 gulp.task('process_js', function () {
-	gulp.src(['js/**/*.js', '!js/advert.js'])
-		.pipe(concat('suddendesu.min.js'))
-		.pipe(uglify())
-		.pipe(gulp.dest('dist/js'));
+//	gulp.src(['js/**/*.js', '!js/advert.js'])
+//		.pipe(concat('suddendesu.min.js'))
+//		.pipe(uglify())
+//		.pipe(gulp.dest('dist/js'));
+	jsPreProcess();
 	gulp.src(['js/greetz', 'dist/js/suddendesu.min.js'])
 		.pipe(concat('suddendesu.min.js'))
 		.pipe(gulp.dest('dist/js'));

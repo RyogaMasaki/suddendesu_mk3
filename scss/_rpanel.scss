@@ -123,28 +123,25 @@
     text-indent: 0.25em;
     color: $color-tertiary;
     line-height: 1.5em;
-    background-color: $color-darken2;
-    //border: 1px $color-callout solid;
-    //border-left-width: 0.3em;
-    border: 1px solid $color-secondary;
-    border-radius: $radius-small;
     padding: 0.3em;
     padding-top: 0;
     padding-bottom: 0;
-
     margin-bottom: 0.5em;
     margin-top: 1.5em;
+  }
 
+  h1 {
+    background-color: $color-darken2;
+    border: 1px solid $color-secondary;
+    border-radius: $radius-small;
+  }
+
+  h2,h3,h4,h5,h6 {
     &:before {
       content:"・";
     }
   }
 
-  h3,h4,h5,h6 {
-    display: inline-block;
-    margin-left: 1em;
-    margin-right: 1em;
-  }
 }
 
 .pnl-tease {

@@ -1,13 +1,3 @@
-/*
-    S  U  D  D  E  N     D  E  S  U
-    - - - - - - - - - - - - - - - -
-          ---==greetz to==---
-               freem/aj
-                 dos
-               #shmups
-    - - - - - - - - - - - - - - - -
-             COPY SURUNA!!
-*/
 (function(){
   /*
  this is really dumb and I'm sorry you have to see this

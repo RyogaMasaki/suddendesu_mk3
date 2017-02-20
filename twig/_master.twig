@@ -20,6 +20,7 @@
 		<meta property="og:url" content="{{ paths.currenturl }}" />
 		<meta property="og:image" content="{% if record.image=='' %}http://sudden-desu.net/img/sd_image.jpg{% else %}{{ paths.rooturl }}{{ thumbnail(record.image, 400, 260) }}{% endif %}" />
 		<link href='https://fonts.googleapis.com/css?family=Droid+Serif|Roboto|Roboto+Mono' rel='stylesheet' type='text/css'>
+    <link rel="alternate" type="application/rss+xml" href="/rss/feed.xml" />
 		<link rel="stylesheet" href="{{ asset('css/suddendesu.css','theme') }}">
 	</head>
 
@@ -31,7 +32,7 @@
 			{% endblock main %}
 
 			<footer id='mainfoot'>
-				<h3>&copy; 2014-2016 sudden-desu.net</h3>
+				<h3>&copy; 2014-2017 sudden-desu.net</h3>
 			</footer>
 		</div>
 	</body>
