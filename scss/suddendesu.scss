@@ -71,8 +71,10 @@ img {
   vertical-align: middle;
 }
 
-input[type='text'] {
+input[type='text'], input[type='search'] {
 	cursor: text;
+  padding-left: 0.2em;
+  padding-right: 0.2em;
 }
 
 .plain {
@@ -145,6 +147,29 @@ textarea {
   height: initial;
   width: 95%;
   color: $gray;
+}
+
+.reddit-link {
+
+  margin-left: auto;
+  margin-right: auto;
+  font-family: monospace;
+  font-size: 1.8em;  
+
+  a {
+    text-decoration: none !important;
+    color: $color-tertiary !important;
+  }
+
+  a:hover {
+    text-decoration: underline !important;
+  }
+
+  img {
+    height: 1.2em;
+    vertical-align: bottom;
+    border: none !important;
+  }
 }
 
 // built in bolt pagination

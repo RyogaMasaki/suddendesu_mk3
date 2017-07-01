@@ -9,6 +9,14 @@
 {% if record.body is defined and record.body is not empty %}
   {{ record.body }}
 {% endif %}
+
+{% if record.reddit_link is not empty %}
+  <hr class='sep'>
+  <div class="reddit-link">
+    <a href='{{ record.reddit_link }}' target='_blank'>Discuss this article on Reddit<img src="{{ asset('img/social_reddit.png', 'theme') }}"></a>
+  </div>
+{% endif %}
+
 {% if record.show_ad != 0 %}
   <hr class='sep'>
   {% include '_advert.twig' %}
