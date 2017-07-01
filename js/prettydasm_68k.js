@@ -13,7 +13,7 @@
 
   // Comment field content
   // This can be HTML
-  var commentContent = "<img src='../img/comment.png' >";
+  var commentContent = '//';
 
   // offset for popup text (in pixels)
   var vertOffset = -25;
@@ -51,7 +51,7 @@
       validLine = false,
       temp = null;
 
-      var regex = /([0-9A-Fa-f]{1,}): ([0-9A-Fa-f]{1,} ?[0-9A-Fa-f]{1,} ?[0-9A-Fa-f]{1,} ?[0-9A-Fa-f]{1,})[ ?]{1,}([A-Za-z0-9\.]{1,})[ ]{0,}([a-zA-Z0-9#_$\+\-,\. \[\]\(\)]{1,})?;?(.{1,})?/g;
+      var regex = /([0-9A-Fa-f]{1,}): ((?:[0-9A-Fa-f]{1,} )?(?:[0-9A-Fa-f]{1,} )?(?:[0-9A-Fa-f]{1,} )?(?:[0-9A-Fa-f]{1,}))?[ ]{0,}([A-Za-z0-9\.]{1,})[ ]{0,}([a-zA-Z0-9#_$+\-,\. \[\]\(\)]{1,})?;?(.{1,})?/g;
       var match = regex.exec(lines[x]);
 
       if (match == null) {
