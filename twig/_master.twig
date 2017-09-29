@@ -14,6 +14,9 @@
 		<title>
 		{{ title }}
 		</title>
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:site" content="@suddendesu" />
+		<meta name="twitter:creator" content="@suddendesu" />
 		<meta property="og:title" content="{{ title }}" />
 		<meta property="og:description" content="{% if record.title is not defined and app.config.get('general/payoff') %}{{ app.config.get('general/payoff') }}{% elseif record.teaser is defined and record.teaser is not empty %}{{ record.teaser|striptags }}{% else %}{{ record.excerpt(220) }}{% endif %}" />
 		<meta property="og:type" content="website" />
